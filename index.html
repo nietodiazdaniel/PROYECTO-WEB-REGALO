@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciativa de Contención [Fase 1]</title>
+    <link rel="stylesheet" href="Bootstrap (CSS)/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/estilo_juego.css" />
+  </head>
+  <body data-bs-theme="dark">
+    <div
+      class="container d-flex align-items-center justify-content-center min-vh-100"
+    >
+      <div class="w-100 text-center">
+        <section id="fase-1-login" class="fase activa">
+          <h1 class="display-4 text-success glow">A.I. CONTAINMENT</h1>
+          <p class="lead">[ Autenticación Requerida ]</p>
+          <div
+            class="card text-bg-dark border-success glow mx-auto"
+            style="max-width: 500px"
+          >
+            <div class="card-body">
+              <div class="mb-3 text-start">
+                <label class="form-label">Usuario:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  value="Administrador"
+                  disabled
+                />
+              </div>
+              <div class="mb-3 text-start">
+                <label for="input-pass" class="form-label">Contraseña:</label>
+                <input
+                  type="password"
+                  id="input-pass"
+                  class="form-control"
+                  autocomplete="off"
+                />
+              </div>
+              <div id="login-error" class="text-danger d-none mb-3">
+                CONTRASEÑA INCORRECTA.
+              </div>
+              <button
+                id="btn-fase-1"
+                class="btn btn-outline-success btn-lg w-100"
+              >
+                Autenticar
+              </button>
+
+              <div class="text-center mt-3">
+                <a
+                  class="btn btn-link text-success-emphasis"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-pista"
+                >
+                  ¿Necesitas una pista, Agente?
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-pista" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-bg-dark border-success glow">
+          <div class="modal-header">
+            <h5 class="modal-title text-success">[ Pista de Administrador ]</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="lead">
+              El protocolo de autenticación está vinculado al hardware.
+            </p>
+            <hr />
+            <p>
+              Revise las **especificaciones físicas** del contenedor para la
+              clave de acceso.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="Bootstrap (JS)/bootstrap.bundle.min.js"></script>
+    <script src="JS/fase1.js" defer></script>
+  </body>
+</html>

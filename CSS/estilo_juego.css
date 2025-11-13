@@ -1,0 +1,180 @@
+/* --- Importamos una fuente "hacker" --- */
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+/* --- Sobrescribimos las variables de color de Bootstrap --- */
+[data-bs-theme="dark"] {
+  --bs-body-color: #00ff00;
+  --bs-body-bg: #0d0d0d;
+  /* ... (resto de variables de color que ya tenías) ... */
+  --bs-border-color: #00ff00;
+  --bs-border-color-translucent: rgba(0, 255, 0, 0.25);
+  --bs-success: #00ff00;
+  --bs-success-rgb: 0, 255, 0;
+  --bs-success-text-emphasis: #00ff00;
+  --bs-success-bg-subtle: rgba(0, 255, 0, 0.1);
+  --bs-success-border-subtle: #00ff00;
+  --bs-danger: #ff0000;
+  --bs-danger-rgb: 255, 0, 0;
+  --bs-danger-text-emphasis: #ff0000;
+  --bs-danger-bg-subtle: rgba(255, 0, 0, 0.1);
+  --bs-danger-border-subtle: #ff0000;
+  --bs-primary: #00ff00;
+  --bs-primary-rgb: 0, 255, 0;
+  --bs-primary-text-emphasis: #00ff00;
+  --bs-primary-bg-subtle: rgba(0, 255, 0, 0.1);
+  --bs-primary-border-subtle: #00ff00;
+}
+
+/* --- Estilo General --- */
+body {
+  font-family: "Share Tech Mono", monospace;
+}
+.fase {
+  animation: fadeIn 0.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.glow {
+  text-shadow: 0 0 8px #00ff00, 0 0 10px #00ff00;
+}
+.glow-danger {
+  text-shadow: 0 0 8px #ff0000, 0 0 10px #ff0000;
+}
+.card.glow {
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+/* --- Estilos FASE 2 (Slot Machine) --- */
+#codigo-objetivo {
+  letter-spacing: 0.3em;
+}
+.cilindro {
+  height: 1.4em;
+  font-size: 5em;
+  font-weight: bold;
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+}
+.cilindro::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-top: 3px solid #ff0000;
+  border-bottom: 3px solid #ff0000;
+  box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.5);
+  z-index: 10;
+}
+.cilindro .numeros {
+  line-height: 1.4em;
+  transition: transform 0.1s linear;
+}
+
+/* --- ¡NUEVO! Estilos FASE 3 (Firewall) --- */
+#firewall-bar {
+  width: 100%;
+  height: 50px;
+  background-color: #1a1a1a;
+  border: 2px solid #00ff00;
+  position: relative;
+  overflow: hidden;
+}
+#safe-zone {
+  position: absolute;
+  /* El JS cambiará 'left' */
+  width: 15%; /* Ancho del hueco */
+  height: 100%;
+  background-color: rgba(0, 255, 0, 0.3);
+  /* ¡NUEVO! Transición suave cuando se mueva */
+  transition: left 0.5s ease-in-out;
+}
+#scanner {
+  position: absolute;
+  left: 0;
+  width: 5%; /* Ancho del escáner */
+  height: 100%;
+  background-color: #ff0000;
+  box-shadow: 0 0 10px #ff0000;
+
+  /* ¡EL CAMBIO! La animación se pondrá con JS */
+}
+/* La animación sigue existiendo, pero la aplicamos/quitamos con JS */
+@keyframes scan-anim {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 95%;
+  } /* 100% - 5% (ancho) */
+}
+/* Clase para parar la animación */
+#scanner.parado {
+  animation-play-state: paused !important; /* !important para forzarlo */
+}
+
+/* --- Estilo de Botones y Inputs (sin cambios) --- */
+.btn-primary,
+.btn-outline-success,
+.form-control {
+  /* (Copia los estilos de botones y form-control del CSS anterior) */
+  /* ... */
+}
+.btn-primary {
+  --bs-btn-bg: #00ff00;
+  --bs-btn-color: #000;
+  --bs-btn-border-color: #00ff00;
+  --bs-btn-hover-bg: #000;
+  --bs-btn-hover-color: #00ff00;
+  --bs-btn-hover-border-color: #00ff00;
+}
+.btn-outline-success {
+  --bs-btn-hover-bg: #00ff00;
+  --bs-btn-hover-color: #000;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+}
+.form-control {
+  background-color: #1a1a1a;
+  color: #00ff00;
+}
+.form-control:focus {
+  background-color: #1a1a1a;
+  color: #00ff00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+}
+#matrix-canvas {
+  position: fixed; /* Ocupa toda la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0d0d0d; /* Fondo negro */
+  z-index: 1000; /* Se pone por encima de todo */
+  display: block; /* Visible por defecto */
+
+  /* ¡LA MAGIA! (Para el desvanecimiento) */
+  transition: opacity 1.5s ease-out;
+}
+/* --- Arreglo para el Código Objetivo en Móviles --- */
+@media (max-width: 576px) {
+  #codigo-objetivo {
+    font-size: 0.9em; /* Hacemos la letra mucho más pequeña */
+    letter-spacing: 0.1em; /* Reducimos el espaciado */
+
+    /* ¡EL TRUCO! Esto le prohíbe "romperse" en dos líneas */
+    white-space: nowrap;
+  }
+}

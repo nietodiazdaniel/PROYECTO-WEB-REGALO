@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciativa de Contención [Accediendo...]</title>
+    <link rel="stylesheet" href="Bootstrap (CSS)/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/estilo_juego.css" />
+  </head>
+  <body data-bs-theme="dark">
+    <canvas id="matrix-canvas"></canvas>
+
+    <div
+      class="container d-flex align-items-center justify-content-center min-vh-100"
+    >
+      <div class="w-100 text-center">
+        <section id="fase-4-briefing" class="fase d-none">
+          <div class="alert alert-success text-center">
+            <h2 class="glow">ÉXITO. SISTEMA ANULADO.</h2>
+          </div>
+
+          <div class="card text-bg-dark border-success">
+            <div class="card-body">
+              <p class="lead">Bienvenido, Agente.</p>
+              <p>Iniciando anulación manual de la caja física.</p>
+              <hr />
+              <h3>Briefing de la Misión:</h3>
+              <ul class="list-group list-group-flush text-start">
+                <li class="list-group-item text-bg-dark">
+                  1. Localice el **transmisor de infrarrojos (IR)**.
+                </li>
+                <li class="list-group-item text-bg-dark">
+                  2. Inicie la secuencia en la caja con el código:
+                </li>
+              </ul>
+              <h1 class="display-3 text-danger text-center glow-danger mt-3">
+                1 - 2 - 3
+              </h1>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="Bootstrap (JS)/bootstrap.bundle.min.js"></script>
+    <script src="JS/fase4.js" defer></script>
+  </body>
+</html>

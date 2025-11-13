@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciativa de Contención [Fase 3]</title>
+    <link rel="stylesheet" href="Bootstrap (CSS)/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/estilo_juego.css" />
+  </head>
+  <body data-bs-theme="dark">
+    <div
+      class="container d-flex align-items-center justify-content-center min-vh-100"
+    >
+      <div class="w-100 text-center">
+        <section id="fase-3-juego" class="fase activa">
+          <h2 id="fase3-titulo" class="text-success glow">
+            BYPASS DEL FIREWALL (NIVEL 1/3)
+          </h2>
+          <p class="lead">
+            Sincronice la infiltración con el hueco del escáner.
+          </p>
+
+          <div id="firewall-bar" class="mt-4">
+            <div id="safe-zone"></div>
+            <div id="scanner"></div>
+          </div>
+
+          <button id="btn-infiltrar" class="btn btn-primary btn-lg mt-4 w-100">
+            INFILTRAR
+          </button>
+
+          <div id="resultado-msg" class="alert mt-4 d-none">...</div>
+        </section>
+      </div>
+    </div>
+
+    <script src="Bootstrap (JS)/bootstrap.bundle.min.js"></script>
+    <script src="JS/fase3.js" defer></script>
+  </body>
+</html>
