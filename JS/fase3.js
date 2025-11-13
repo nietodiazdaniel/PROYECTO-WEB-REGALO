@@ -19,17 +19,17 @@ document.addEventListener("DOMContentLoaded", function() {
     const niveles = [
         // Nivel 1 (índice 0)
         { 
-            velocidad: "4s",  // Lento (4 segundos por ciclo)
+            velocidad: "2.25s",  // Lento (4 segundos por ciclo)
             posicion: "20%" // Zona segura a la izquierda
         },
         // Nivel 2 (índice 1)
         { 
-            velocidad: "2.5s", // Rápido
+            velocidad: "1.75s", // Rápido
             posicion: "75%" // Zona segura a la derecha
         },
         // Nivel 3 (índice 2)
         { 
-            velocidad: "1.5s", // ¡Muy rápido!
+            velocidad: "1.25s", // ¡Muy rápido!
             posicion: "50%" // Zona segura en el centro
         }
     ];

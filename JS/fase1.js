@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     btnFase1.addEventListener("click", function() {
         // ¡¡CAMBIA ESTA CONTRASEÑA!!
-        const passCorrecta = "luigi"; 
+        const passCorrecta = "25112004"; 
         
         if (inputPass.value.toLowerCase() === passCorrecta) {
             // ¡ÉXITO! Guarda el "permiso"
